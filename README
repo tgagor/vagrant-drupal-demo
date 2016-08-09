@@ -1,6 +1,7 @@
 # HOWTO
 
 ## Requirements
+* virtualbox (I have 5.0.26)
 * vagrant (I used version 1.8.5)
 * vagrant-vbguest plugin (0.11.0)
 
@@ -15,4 +16,17 @@
   database username: `drupal`
   database password: `drupal`
 * fill site preferences as you wish - just notice user and password
+* add those settings at the end of `/var/www/drupal/sites/default/settings.php`
+
+```
+$conf['drupal_http_request_fails'] = FALSE;
+
+$conf['cache_backends'][] = 'sites/all/modules/memcache/memcache.inc';
+$conf['cache_default_class'] = 'MemCacheDrupal';
+
+$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+$conf['memcache_key_prefix'] = 'drupal-demo';
+$conf['memcache_servers'] = array('127.0.0.1:11211' => 'default');
+```
+
 * now from menu click `Modules` and enable on bottom `Memcache` and `Memcache Admin`

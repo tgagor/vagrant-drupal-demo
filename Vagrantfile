@@ -16,9 +16,9 @@ Vagrant.configure('2') do |config|
   config.vm.provision 'shell', path: 'conf/provision.sh'
 
   # add more memory if needed
-  # config.vm.provider 'virtualbox' do |vb|
-  #  vb.customize ['modifyvm', :id, '--memory', '1024']
-  # end
+  config.vm.provider 'virtualbox' do |vb|
+    vb.customize ['modifyvm', :id, '--memory', '1024']
+  end
 
   # to fix Warning: Authentication failure. Retrying...
   config.ssh.insert_key = false

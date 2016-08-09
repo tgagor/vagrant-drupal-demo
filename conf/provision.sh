@@ -26,7 +26,7 @@ yum install -y nginx \
   php70u-process php70u-mcrypt php70u-xml php70u-pdo php70u-gd php70u-pecl-imagick \
   php70u-cli php70u-json php70u-pear \
   Percona-Server-server-56 Percona-Server-client-56 percona-toolkit \
-  vim wget
+  vim wget tcpdump gdb valgrind
 
 # start db - it will take some time
 systemctl start  mysqld.service
