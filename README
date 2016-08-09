@@ -1,0 +1,18 @@
+# HOWTO
+
+## Requirements
+* vagrant (I used version 1.8.5)
+* vagrant-vbguest plugin (0.11.0)
+
+## Debug
+
+* Run `vagrant up` to start machine.
+* HTTP will be running on [http://localhost:8080] so open it in browser
+* select standard installation method
+* next on language selection
+* for database use MySQL with:
+  database name: `drupal`
+  database username: `drupal`
+  database password: `drupal`
+* fill site preferences as you wish - just notice user and password
+* now from menu click `Modules` and enable on bottom `Memcache` and `Memcache Admin`
